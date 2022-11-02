@@ -1,0 +1,22 @@
+//Variables that might be used across multiple files
+$font-primary: "";
+$font-size: 16px;
+
+//List of our colours
+$colours: (
+  white: #ffffff,
+  black: #000000,
+  blue: #016fb9,
+  yellow-orange: #ff9505,
+  orange: #ec4e20,
+  black-olive: #353531,
+);
+
+//Retrieve colour
+@function get-colour($colour) {
+  @if map-has-key($colours, $colour) {
+    @return map-get($colours, $colour);
+  } @else {
+    @error "Could not find the colour #{$colour} in the colour list.";
+  }
+}

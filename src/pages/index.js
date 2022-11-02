@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import {
-  homeObjOne,
-  homeObjTwo,
-  homeObjThree,
-} from "../components/InfoSection/data";
-import HeroSection from "../components/HeroSection";
-import InfoSection from "../components/InfoSection";
-import Services from "../components/Services";
-import Footer from "../components/Footer";
+import Navbar from "../components/new_components/Navbar";
+import SideMenu from "../components/new_components/SideMenu";
 
 const Home = () => {
+  /* TODO
+   * Add navbar (in app?)
+   * Add hero section
+   * Add main page sections
+   * Add footer (in app?)
+   */
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -20,14 +17,8 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <SideMenu isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
-      <HeroSection />
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
-      <Services />
-      <InfoSection {...homeObjThree} />
-      <Footer />
     </>
   );
 };
