@@ -14,6 +14,7 @@ const SideMenu = ({ isOpen, toggle }) => {
     );
   };
 
+  //TODO - Add LBB logo for home?
   return (
     <div className={`c-side-menu__container ${openClass}`} onClick={toggle}>
       <div className="c-side-menu__close-icon" onClick={toggle}>
