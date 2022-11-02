@@ -15,12 +15,7 @@ const Home = () => {
     setIsOpen(!isOpen);
   };
 
-  return (
-    <>
-      <SideMenu isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
-    </>
-  );
+  return <></>;
 };
 
 export default Home;
