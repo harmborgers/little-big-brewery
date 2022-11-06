@@ -1,0 +1,95 @@
+@use "../../../css/variables";
+
+.c-footer {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    width: 880px;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__col-1,
+  &__col-2 {
+    flex: 0 0 180px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__list-item {
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      color: variables.get-colour(liver);
+    }
+  }
+
+  &__contact {
+    & p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__bottom {
+    padding: 1rem 2rem;
+    color: white;
+    background-color: variables.get-colour(dark-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__bottom-container {
+    max-width: 880px;
+    width: 100%;
+    display: flex;
+  }
+
+  &__copyright {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+  }
+
+  &__socials {
+    flex: 0;
+    margin-left: 1rem;
+  }
+
+  &__social-icon {
+    font-size: 24px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .c-footer {
+    &__content {
+      display: block;
+    }
+
+    &__col-1 {
+      margin-bottom: 2rem;
+    }
+  }
+}

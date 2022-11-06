@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "../components/new_components/Navbar";
-import SideMenu from "../components/new_components/SideMenu";
+import HeroSection from "../components/new_components/HeroSection";
+import MainSection from "../components/new_components/MainSection";
+import { mainSectionData } from "../components/new_components/MainSection/data";
+import _ from "lodash";
 
 const Home = () => {
   /* TODO
@@ -15,7 +17,16 @@ const Home = () => {
     setIsOpen(!isOpen);
   };
 
-  return <></>;
+  const mainSections = _.map(mainSectionData, (data) => {
+    return <MainSection {...data} key={data.key} />;
+  });
+
+  return (
+    <>
+      <HeroSection />
+      {mainSections}
+    </>
+  );
 };
 
 export default Home;

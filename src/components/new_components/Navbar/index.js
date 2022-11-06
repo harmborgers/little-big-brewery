@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import cx from "classnames";
+import _ from "lodash";
 
 const Navbar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  //Throttle to prevent excessive scroll function calls
+  useEffect(() => {
+    window.addEventListener("scroll", _.throttle(changeNav, 100));
+  }, []);
+
   const NavbarItem = ({ to, text }) => {
     return (
       <li className="c-navbar__item">
@@ -13,7 +30,11 @@ const Navbar = ({ toggle }) => {
   };
 
   return (
-    <div className="c-navbar">
+    <div
+      className={cx("c-navbar", {
+        "has-background": scrollNav,
+      })}
+    >
       <div className="c-navbar__container">
         <div className="c-navbar__logo"></div>
         <div className="c-navbar__mobile-icon" onClick={toggle}>

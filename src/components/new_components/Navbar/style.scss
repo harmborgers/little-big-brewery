@@ -1,8 +1,8 @@
 @use "../../../css/variables";
 
 .c-navbar {
-  background: #000;
   height: 80px;
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +10,11 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: 0.25s;
+
+  &.has-background {
+    background-color: variables.get-colour(dark-brown);
+  }
 
   &__container {
     display: flex;
@@ -49,7 +54,7 @@
     }
 
     &:hover {
-      color: #01bf71;
+      color: variables.get-colour(bright-green);
       transition: 0.2s ease-in-out;
     }
   }
@@ -66,6 +71,10 @@
     background-repeat: no-repeat;
     background-size: 48px 48px;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
   }
 
   &__mobile-icon {

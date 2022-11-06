@@ -1,0 +1,39 @@
+@use "../../../css/variables";
+
+.o-content-btn {
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  outline: 1px solid rgba(0, 0, 0, 0.05);
+
+  &--primary {
+    background-color: variables.get-colour(olive-green);
+    color: variables.get-colour(white);
+  }
+
+  &--big {
+    padding: 14px 48px;
+    font-size: 1.5rem;
+  }
+
+  &__icon {
+    margin-left: 12px;
+  }
+
+  &:hover {
+    background-color: variables.get-colour(cream-brown);
+    transition: all 0.15s ease-in-out;
+
+    &.o-content-btn--primary {
+      background-color: variables.get-colour(dark-green);
+    }
+  }
+}
