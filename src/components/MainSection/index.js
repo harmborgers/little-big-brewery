@@ -5,9 +5,9 @@ import _ from "lodash";
 import ContentButton from "../ContentButton";
 
 const MainSection = (data) => {
-  const descriptions = _.map(data.descriptions, (description) => {
+  const descriptions = _.map(data.descriptions, (description, index) => {
     return (
-      <li className="c-main-section__description">
+      <li className="c-main-section__description" key={`${data.id}_${index}`}>
         <span className="c-main-section__description-header">
           {description.header}{" "}
         </span>

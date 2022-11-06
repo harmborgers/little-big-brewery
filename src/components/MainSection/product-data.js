@@ -35,7 +35,7 @@ export const productData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
+    img: require("../../images/products/can_blue.png"),
     imgAlt: "Little Big Lager Than Life",
     imgFirst: false,
     darkSection: true,
@@ -72,8 +72,8 @@ export const productData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
-    imgAlt: "Little Big Lager Than Life",
+    img: require("../../images/products/can_green.png"),
+    imgAlt: "Little Big Smooth Hoperator",
     imgFirst: false,
     darkSection: false,
     hideButton: true,
@@ -109,8 +109,8 @@ export const productData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
-    imgAlt: "Little Big Lager Than Life",
+    img: require("../../images/products/can_pink.png"),
+    imgAlt: "Little Big Kung Brew",
     imgFirst: false,
     darkSection: true,
     hideButton: true,
@@ -118,7 +118,7 @@ export const productData = [
   {
     id: "pale_ale",
     key: "pale_ale",
-    title: "A Little Big Classic",
+    title: "A Hop in your step",
     subtitle: "HOP TO IT",
     details: "PALE ALE / ABV 5.7%",
     descriptions: [
@@ -146,8 +146,8 @@ export const productData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
-    imgAlt: "Little Big Lager Than Life",
+    img: require("../../images/products/can_red.png"),
+    imgAlt: "Little Big Hop To It",
     imgFirst: false,
     darkSection: false,
     hideButton: true,
@@ -155,7 +155,7 @@ export const productData = [
   {
     id: "porter",
     key: "porter",
-    title: "A Little Big Classic",
+    title: "DARK AND BROODING",
     subtitle: "ANY PORTER IN A STORM",
     details: "PORTER / ABV 7.4%",
     descriptions: [
@@ -183,8 +183,8 @@ export const productData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
-    imgAlt: "Little Big Lager Than Life",
+    img: require("../../images/products/can_teal.png"),
+    imgAlt: "Little Big Any Porter In A Storm",
     imgFirst: false,
     darkSection: true,
     hideButton: true,

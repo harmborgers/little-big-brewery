@@ -12,9 +12,18 @@ const Footer = () => {
             <div className="c-footer__col-1">
               <div className="c-footer__header">Navigation</div>
               <ul className="c-footer__list">
-                <Link className="c-footer__list-item">Our Products</Link>
-                <Link className="c-footer__list-item">About Us</Link>
-                <Link className="c-footer__list-item">Contact Us</Link>
+                <Link className="c-footer__list-item" to="/">
+                  Home
+                </Link>
+                <Link className="c-footer__list-item" to="/products">
+                  Our Products
+                </Link>
+                <Link className="c-footer__list-item" to="/">
+                  About Us
+                </Link>
+                <Link className="c-footer__list-item" to="/">
+                  Contact Us
+                </Link>
               </ul>
             </div>
             <div className="c-footer__col-2">

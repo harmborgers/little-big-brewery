@@ -21,7 +21,7 @@ export const mainSectionData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
+    img: require("../../images/products/can_green.png"),
     imgAlt: "New Amber Ale",
     imgFirst: false,
     darkSection: false,
@@ -49,7 +49,7 @@ export const mainSectionData = [
         Or less and more communication with your engineers?
       </>
     ),
-    img: require("../../images/placeholder.svg").default,
+    img: require("../../images/brewmaster.jpeg"),
     imgAlt: "About Us",
     imgFirst: true,
     darkSection: true,
