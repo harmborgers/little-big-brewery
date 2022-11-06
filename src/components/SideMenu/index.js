@@ -14,7 +14,6 @@ const SideMenu = ({ isOpen, toggle }) => {
     );
   };
 
-  //TODO - Add LBB logo for home?
   return (
     <div className={`c-side-menu__container ${openClass}`} onClick={toggle}>
       <div className="c-side-menu__close-icon" onClick={toggle}>
@@ -22,8 +21,8 @@ const SideMenu = ({ isOpen, toggle }) => {
       </div>
       <ul className="c-side-menu__content">
         <SideMenuItem text="Our Products" to="/products" />
-        <SideMenuItem text="About Us" to="/about" />
-        <SideMenuItem text="Contact Us" to="/contact" />
+        <SideMenuItem text="About Us" to="/" />
+        <SideMenuItem text="Contact Us" to="/" />
       </ul>
     </div>
   );

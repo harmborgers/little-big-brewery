@@ -1,3 +1,8 @@
+/**
+ * Data file for main sections content. To add another section
+ * pass another object into the array.
+ */
+
 export const mainSectionData = [
   {
     id: "products",
@@ -16,11 +21,12 @@ export const mainSectionData = [
         add beautiful notes of oak and vanilla.
       </>
     ),
-    img: require("../../../images/svg-1.svg").default,
+    img: require("../../images/placeholder.svg").default,
     imgAlt: "New Amber Ale",
     imgFirst: false,
     darkSection: false,
     buttonText: "View our brews",
+    buttonTarget: "/products",
   },
   {
     id: "about",
@@ -43,10 +49,11 @@ export const mainSectionData = [
         Or less and more communication with your engineers?
       </>
     ),
-    img: require("../../../images/svg-1.svg").default,
+    img: require("../../images/placeholder.svg").default,
     imgAlt: "About Us",
     imgFirst: true,
     darkSection: true,
     buttonText: "Find out more",
+    buttonTarget: "/",
   },
 ];

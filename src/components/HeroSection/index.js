@@ -1,49 +1,38 @@
-import React, { useState } from "react";
-import Video from "../../videos/hero_bg.mp4";
-import { Button } from "../ButtonElements";
-import {
-  HeroContainer,
-  HeroBg,
-  VideoBg,
-  HeroContent,
-  HeroH1,
-  HeroP,
-  HeroBtnWrapper,
-  ArrowForward,
-  ArrowRight,
-} from "./HeroElements";
+import React from "react";
+import "./style.scss";
+import ContentButton from "../ContentButton";
+import Video from "../../videos/hero_bg_beer.mp4";
 
 const HeroSection = () => {
-  const [hover, setHover] = useState(false);
-
-  const onHover = () => {
-    setHover(!hover);
-  };
-
   return (
-    <HeroContainer id="home">
-      <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
-      </HeroBg>
-      <HeroContent>
-        <HeroH1>Virtual Banking Made Easy</HeroH1>
-        <HeroP>
-          Sign up for a new account today and receive $250 in credit towards
-          your next payment
-        </HeroP>
-        <HeroBtnWrapper>
-          <Button
-            to="signup"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary="true"
-            dark="true"
-          >
-            Get started {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
-        </HeroBtnWrapper>
-      </HeroContent>
-    </HeroContainer>
+    <div className="c-hero-section">
+      <div className="c-hero-section__bg u-noselect">
+        <video
+          className="c-hero-section__bg-video"
+          src={Video}
+          autoPlay
+          loop
+          muted
+        />
+      </div>
+      <div className="c-hero-section__content">
+        <h1 className="c-hero-section__header">
+          The best beers this side of the Yarra
+        </h1>
+        <p className="c-hero-section__text">
+          At least in our humble opinion, anyway
+        </p>
+        <div className="c-hero-section__btn-wrapper">
+          {" "}
+          <ContentButton
+            text="Explore our range"
+            hidden={false}
+            target="/products"
+            additionalClasses={{ primary: true }}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-@use "../../../css/variables";
+@use "../../css/variables";
 
 .c-main-section {
   color: variables.get-colour(black);
@@ -11,7 +11,7 @@
 
   &__wrapper {
     height: 100%;
-    max-width: 880px;
+    max-width: 940px;
     margin-right: auto;
     margin-left: auto;
     padding: 0px 24px;
@@ -26,7 +26,7 @@
 
   &__col-1 {
     flex: 1;
-    margin-right: 2rem;
+    margin-right: 4rem;
 
     .c-main-section__wrapper--image-first & {
       margin-right: 0;
@@ -38,7 +38,7 @@
     margin-right: 0;
 
     .c-main-section__wrapper--image-first & {
-      margin-right: 2rem;
+      margin-right: 4rem;
     }
   }
 
@@ -64,6 +64,26 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: variables.get-colour(liver);
+
+    .c-main-section--dark & {
+      color: variables.get-colour(cream-brown);
+    }
+  }
+
+  &__descriptions {
+    font-size: 0.8rem;
+    list-style: none;
+    margin-bottom: 0.8rem;
+  }
+
+  &__description {
+    margin-bottom: 0.1rem;
+  }
+
+  &__description-header {
+    font-weight: 600;
+    color: variables.get-colour(liver);
+    text-transform: uppercase;
 
     .c-main-section--dark & {
       color: variables.get-colour(cream-brown);

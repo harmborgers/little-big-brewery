@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { FaBars } from "react-icons/fa";
-import { IconContext } from "react-icons/lib";
-import { animateScroll as scroll } from "react-scroll";
-import {
-  Nav,
-  NavbarContainer,
-  NavbarLogo,
-  MobileIcon,
-  NavMenu,
-  NavItem,
-  NavLinks,
-  NavBtn,
-  NavBtnLink,
-} from "./NavbarElements";
+/**
+ * Navbar
+ */
 
+import React, { useEffect, useState } from "react";
+import "./style.scss";
+import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import cx from "classnames";
+import _ from "lodash";
+
+/**
+ * @param {'function'} toggle Toggle the background on the navbar
+ * @returns
+ */
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -25,56 +24,39 @@ const Navbar = ({ toggle }) => {
     }
   };
 
+  //Throttle to prevent excessive scroll function calls
   useEffect(() => {
-    window.addEventListener("scroll", changeNav);
+    window.addEventListener("scroll", _.throttle(changeNav, 100));
   }, []);
 
-  const toggleHome = () => {
-    scroll.scrollToTop();
+  const NavbarItem = ({ to, text }) => {
+    return (
+      <li className="c-navbar__item">
+        <Link to={to}>{text}</Link>
+      </li>
+    );
   };
 
   return (
-    <>
-      <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav scrollNav={scrollNav}>
-          <NavbarContainer>
-            <NavbarLogo to="/" onClick={toggleHome}>
-              Test
-            </NavbarLogo>
-            <MobileIcon onClick={toggle}>
-              <FaBars />
-            </MobileIcon>
-            <NavMenu>
-              <NavItem>
-                <NavLinks to="ourrange">Our Range</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
-                  to="about"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}
-                  activeClass="active"
-                >
-                  About Us
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="wheretobuy">Where To Buy</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="contact">Contact Us</NavLinks>
-              </NavItem>
-            </NavMenu>
-            <NavBtn>
-              <NavBtnLink to="/signin">Sign In</NavBtnLink>
-            </NavBtn>
-          </NavbarContainer>
-        </Nav>
-      </IconContext.Provider>
-    </>
+    <div
+      className={cx("c-navbar", {
+        "has-background": scrollNav,
+      })}
+    >
+      <div className="c-navbar__container">
+        <Link to="/">
+          <div className="c-navbar__logo"></div>
+        </Link>
+        <div className="c-navbar__mobile-icon" onClick={toggle}>
+          <FaBars />
+        </div>
+        <ul className="c-navbar__menu">
+          <NavbarItem text="Our Products" to="/products" />
+          <NavbarItem text="About Us" to="/" />
+          <NavbarItem text="Contact Us" to="/" />
+        </ul>
+      </div>
+    </div>
   );
 };
 

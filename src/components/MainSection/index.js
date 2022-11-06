@@ -5,6 +5,17 @@ import _ from "lodash";
 import ContentButton from "../ContentButton";
 
 const MainSection = (data) => {
+  const descriptions = _.map(data.descriptions, (description) => {
+    return (
+      <li className="c-main-section__description">
+        <span className="c-main-section__description-header">
+          {description.header}{" "}
+        </span>
+        {description.text}
+      </li>
+    );
+  });
+
   return (
     <div
       className={cx("c-main-section", {
@@ -22,9 +33,16 @@ const MainSection = (data) => {
             <h1 className="c-main-section__title">{data.title}</h1>
             <h3 className="c-main-section__subtitle">{data.subtitle}</h3>
             <h5 className="c-main-section__details">{data.details}</h5>
+            <ul className="c-main-section__descriptions">
+              <>{descriptions} </>
+            </ul>
             <p className="c-main-section__text">{data.text}</p>
           </div>
-          <ContentButton text={data.buttonText} />
+          <ContentButton
+            text={data.buttonText}
+            hidden={data.hideButton}
+            target={data.buttonTarget}
+          />
         </div>
         <div className="c-main-section__col-2">
           <div className="c-main-section__image-wrapper">

@@ -1,4 +1,4 @@
-@use "../../../css/variables";
+@use "../../css/variables";
 
 .c-navbar {
   height: 80px;
@@ -66,7 +66,7 @@
     display: flex;
     align-items: center;
     justify-self: flex-start;
-    background-image: url("../../../images/logos/lbb_logo_vertical_light.svg");
+    background-image: url("../../images/logos/lbb_logo_vertical_light.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 48px 48px;
